@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunController : MonoBehaviour {
+public class EnemyGunController : MonoBehaviour {
 
     public bool RenderDebug;
     public bool IsFiring;
@@ -12,6 +12,7 @@ public class GunController : MonoBehaviour {
     public float BulletDamage;
     public Transform FirePoint;
 	public Transform DrawLine;
+	public Transform Target;
 
 	private Camera MainCamera;
 	private float ShotCounter;
@@ -41,12 +42,10 @@ public class GunController : MonoBehaviour {
 		float RayLength;
 
 		if (GroundPlane.Raycast (CameraRay, out RayLength)) {
-			Vector3 PointToLook = CameraRay.GetPoint (RayLength);
-
-			transform.LookAt(new Vector3(PointToLook.x,transform.position.y,PointToLook.z));
-
+			transform.LookAt(new Vector3(Target.position.x,transform.position.y,Target.position.z));
+			//Debug
 			if (RenderDebug == true) {
-				Debug.DrawLine (DrawLine.position, PointToLook, Color.cyan);
+				Debug.DrawLine (DrawLine.position, Target.position, Color.green);
 			}
 		}
 	}

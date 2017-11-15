@@ -6,8 +6,10 @@ public class BulletController : MonoBehaviour {
 
 	public float Speed;
 	public float LifeTime;
+    public float Damage;
 
 	private float LifeTimeCounter;
+    
 
 	void Start () {
 		LifeTimeCounter = LifeTime;
@@ -27,6 +29,10 @@ public class BulletController : MonoBehaviour {
 		if (Wall.gameObject.tag == "Wall") {
 			Destroy (gameObject);
 		}
-
-	}
+        //if (Enemy.gameObject.tag == "Enemy") {
+        //    Debug.Log("HIT");
+           //Health -= Damage;
+           //Destroy(Enemy.gameObject);
+		//}
+    }
 }
