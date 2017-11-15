@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour {
-
+	
 	public float Speed;
 	public float LifeTime;
     public float Damage;

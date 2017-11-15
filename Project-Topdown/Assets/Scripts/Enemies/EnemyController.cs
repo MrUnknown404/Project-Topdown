@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
+	public bool IsFiring;
 	public bool Move;
     public bool RenderDebug;
     public float Health;
 	public float Speed;
     public Transform Target;
+	public EnemyGunController Gun;
 
     private Camera MainCamera;
 
@@ -17,7 +19,12 @@ public class EnemyController : MonoBehaviour {
     }
 
     void Update () {
-		
+		if (Health <= 0) {
+			Destroy (gameObject);
+		}
+		if (IsFiring == true) {
+			Gun.IsFiring = true;
+		}
 	}
 
     void FixedUpdate() {
@@ -29,5 +36,11 @@ public class EnemyController : MonoBehaviour {
             Debug.DrawLine(transform.position, Target.position, Color.red);
         }
     }
+	void OnTriggerEnter (Collider Bullet) {
+		if (Bullet.gameObject.tag == "Bullet") {
+			Health -= 1; //*2
+			Destroy (Bullet.gameObject);
+		}
+	}
 }
 

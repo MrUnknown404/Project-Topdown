@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
 	public float MoveSpeed;
 	public GunController Gun;
 	public bool RenderDebug;
+	public float Health;
 
 	private Rigidbody Rb;
 	private Vector3 MoveInput;
@@ -46,9 +47,19 @@ public class Movement : MonoBehaviour {
 		if (Input.GetButtonUp ("Mouse_LeftClick")) {
 			Gun.IsFiring = false;
 		}
+		if (Health <= 0) {
+			Destroy (gameObject);
+		}
 	}
 
 	void FixedUpdate () {
 		Rb.velocity = MoveVelocity;
+	}
+
+	void OnTriggerEnter (Collider Bullet) {
+		if (Bullet.gameObject.tag == "Bullet") {
+			Health -= 1; //*2
+			Destroy (Bullet.gameObject);
+		}
 	}
 }
