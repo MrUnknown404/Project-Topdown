@@ -1191,6 +1191,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1058935415}
   m_GameObject: {fileID: 1311380460}
   m_Mesh: {fileID: 4300002, guid: 5112e6444b23577429168ceb76476ae4, type: 3}
+--- !u!114 &1354860069 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114652007436239978, guid: d22a1fdbef44cb64d8f9fd1887868fbf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1814670264}
+  m_Script: {fileID: 11500000, guid: 8c2bdad219748614f945a5c598a6a984, type: 3}
 --- !u!1001 &1814670264
 Prefab:
   m_ObjectHideFlags: 0
@@ -1240,6 +1246,21 @@ Prefab:
       propertyPath: Target
       value: 
       objectReference: {fileID: 1093858365}
+    - target: {fileID: 114396655093216746, guid: d22a1fdbef44cb64d8f9fd1887868fbf,
+        type: 2}
+      propertyPath: Move
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652007436239978, guid: d22a1fdbef44cb64d8f9fd1887868fbf,
+        type: 2}
+      propertyPath: IsFiring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114396655093216746, guid: d22a1fdbef44cb64d8f9fd1887868fbf,
+        type: 2}
+      propertyPath: Gun
+      value: 
+      objectReference: {fileID: 1354860069}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d22a1fdbef44cb64d8f9fd1887868fbf, type: 2}
   m_IsPrefabParent: 0
