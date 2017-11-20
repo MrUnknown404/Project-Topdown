@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+	public float Health;
 	public float MoveSpeed;
 	public GunController Gun;
 	public bool RenderDebug;
-	public float Health;
 
 	private Rigidbody Rb;
 	private Vector3 MoveInput;
