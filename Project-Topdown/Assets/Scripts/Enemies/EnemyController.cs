@@ -12,12 +12,6 @@ public class EnemyController : MonoBehaviour {
     public Transform Target;
 	public EnemyGunController Gun;
 
-    private Camera MainCamera;
-
-    void Start() {
-        MainCamera = FindObjectOfType<Camera>();
-    }
-
     void Update () {
 		if (Health <= 0) {
 			Destroy (gameObject);

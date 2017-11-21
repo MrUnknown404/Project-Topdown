@@ -40,11 +40,10 @@ public class PlayerController : MonoBehaviour {
 				Debug.DrawLine (transform.position, PointToLook, Color.blue);
 			}
 		}
-		if (Input.GetButtonDown("Mouse_LeftClick")) {
+		if (Input.GetButton("Mouse_LeftClick")) {
 			Gun.IsFiring = true;
 
-		}
-		if (Input.GetButtonUp ("Mouse_LeftClick")) {
+		} else {
 			Gun.IsFiring = false;
 		}
 		if (Health <= 0) {
